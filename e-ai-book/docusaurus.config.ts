@@ -106,7 +106,7 @@ const config: Config = {
           items: [
             {
               label: 'Tutorial',
-              to: '/docs/tutorial-basics/create-a-document',
+              to: '/docs/intro',
             },
           ],
         },
