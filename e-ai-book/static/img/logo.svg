@@ -1,0 +1,13 @@
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M19 10C19 11.1046 18.1046 12 17 12H7C5.89543 12 5 11.1046 5 10C5 8.89543 5.89543 8 7 8H17C18.1046 8 19 8.89543 19 10Z" fill="currentColor"/>
+<path d="M19 10C19 11.1046 18.1046 12 17 12H7C5.89543 12 5 11.1046 5 10C5 8.89543 5.89543 8 7 8H17C18.1046 8 19 8.89543 19 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M10 16V17C10 17.5523 9.55228 18 9 18H7C6.44772 18 6 17.5523 6 17V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M18 16V17C18 17.5523 17.5523 18 17 18H15C14.4477 18 14 17.5523 14 17V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M12 5V8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M7 8V7C7 5.89543 7.89543 5 9 5H15C16.1046 5 17 5.89543 17 7V8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M9 16H15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M12 18V19C12 20.1046 11.1046 21 10 21H8C6.89543 21 6 20.1046 6 19V18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M18 18V19C18 20.1046 17.1046 21 16 21H14C12.8954 21 12 20.1046 12 19V18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M12 2C9.03395 2 6.55995 3.73812 5.37827 6.30514C4.85194 7.42082 4.49969 8.67069 4.30138 10C4.10173 11.3396 4 12.6845 4 13.9995C4 16.0354 4.41774 17.9622 5.23694 19.6775C6.05614 21.3929 7.24075 22.4208 8 22.6896" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M12 2C14.966 2 17.44 3.73812 18.6217 6.30514C19.1481 7.42082 19.5003 8.67069 19.6986 10C19.8983 11.3396 20 12.6845 20 13.9995C20 16.0354 19.5823 17.9622 18.7631 19.6775C17.9439 21.3929 16.7593 22.4208 16 22.6896" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

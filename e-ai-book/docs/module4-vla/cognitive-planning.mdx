@@ -1,0 +1,49 @@
+---
+id: cognitive-planning
+title: Cognitive Planning
+sidebar_label: Cognitive Planning
+---
+
+# Cognitive Planning
+
+This chapter explores how robots can perform high-level reasoning and planning, often guided by Large Language Models (LLMs), to achieve complex goals.
+
+## Content Placeholder
+
+[Provide detailed content about symbolic planning, hierarchical task networks (HTN), goal-oriented action planning, and how LLMs can be used to generate or refine these plans for robotic systems.]
+
+## Code Examples
+
+```python
+# Conceptual Python code for a simple cognitive planner generating a sequence of actions
+class CognitivePlanner:
+    def __init__(self, knowledge_base):
+        self.kb = knowledge_base # Placeholder for a knowledge base
+
+    def plan_task(self, high_level_goal):
+        print(f"Planning for goal: {high_level_goal}")
+        # In a real system, this would involve complex reasoning
+        if "fetch cup" in high_level_goal:
+            return ["navigate_to_table", "detect_cup", "grasp_cup", "navigate_to_shelf", "place_cup"]
+        elif "open door" in high_level_goal:
+            return ["navigate_to_door", "approach_handle", "grasp_handle", "turn_handle", "push_door"]
+        else:
+            return ["unknown_action"]
+
+# Usage (conceptual)
+# planner = CognitivePlanner(KnowledgeBase())
+# plan = planner.plan_task("fetch cup from the table")
+# print(f"Generated plan: {plan}")
+```
+
+## Architecture Diagrams
+
+[Insert architecture diagrams illustrating cognitive planning architectures, including components like LLMs, knowledge bases, planners, and action executors.]
+
+## Launch Files
+
+[Insert launch file examples for starting ROS 2 nodes that manage task planning, state machines, or behavior trees derived from cognitive plans.]
+
+## Simulation Configurations
+
+[Insert simulation configuration details for creating complex environments with dynamic objects and scenarios suitable for testing cognitive planning capabilities.]

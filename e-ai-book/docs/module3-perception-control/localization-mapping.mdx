@@ -1,0 +1,61 @@
+--- 
+id: localization-mapping
+title: Localization and Mapping (SLAM)
+sidebar_label: Localization/Mapping
+---
+
+# Localization and Mapping (SLAM)
+
+This chapter covers the essential concepts of robot localization, mapping, and Simultaneous Localization and Mapping (SLAM).
+
+## Content Placeholder
+
+[Provide detailed content about different localization techniques (e.g., GPS, odometry, visual odometry), mapping algorithms (e.g., occupancy grids, point clouds), and various SLAM approaches (e.g., EKF-SLAM, graph-based SLAM, visual SLAM).]
+
+## Code Examples
+
+```cpp
+// Conceptual C++ code for a simple pose update in a SLAM system
+// (Highly simplified for illustration)
+#include <iostream>
+#include <Eigen/Dense> // Requires Eigen library for matrix operations
+
+// Represents a robot's pose (x, y, yaw)
+struct Pose {
+    double x, y, yaw;
+};
+
+// Function to update robot's pose based on odometry
+Pose update_pose_odometry(const Pose& current_pose, double delta_distance, double delta_yaw) {
+    Pose new_pose;
+    new_pose.x = current_pose.x + delta_distance * std::cos(current_pose.yaw + delta_yaw / 2.0);
+    new_pose.y = current_pose.y + delta_distance * std::sin(current_pose.yaw + delta_yaw / 2.0);
+    new_pose.yaw = current_pose.yaw + delta_yaw;
+    return new_pose;
+}
+
+int main() {
+    Pose initial_pose = {0.0, 0.0, 0.0}; // Start at origin, facing X-axis
+    double distance_moved = 1.0;         // Move 1 meter
+    double rotation_angle = M_PI / 4.0;  // Rotate 45 degrees
+
+    Pose new_pose = update_pose_odometry(initial_pose, distance_moved, rotation_angle);
+
+    std::cout << "Initial Pose: (" << initial_pose.x << ", " << initial_pose.y << ", " << initial_pose.yaw << ")\n";
+    std::cout << "New Pose (Odometry): (" << new_pose.x << ", " << new_pose.y << ", " << new_pose.yaw << ")\n";
+
+    return 0;
+}
+```
+
+## Architecture Diagrams
+
+[Insert architecture diagrams illustrating different components of a SLAM system (e.g., sensor input, front-end, back-end, loop closure).]
+
+## Launch Files
+
+[Insert launch file examples for starting ROS 2 nodes for LiDAR odometry, visual odometry, mapping algorithms (e.g., Cartographer, GMapping, VSLAM packages).]
+
+## Simulation Configurations
+
+[Insert simulation configuration details for setting up environments suitable for SLAM testing, including sensor noise models and ground truth data.]

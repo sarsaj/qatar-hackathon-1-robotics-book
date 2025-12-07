@@ -1,0 +1,75 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* You can override the default Infima variables here. */
+:root {
+  --ifm-color-primary: #AAC4F5; /* User's Primary */
+  --ifm-color-primary-dark: #97B1E4; /* Derived from Primary */
+  --ifm-color-primary-darker: #829ED3; /* Derived from Primary */
+  --ifm-color-primary-darkest: #6D8ACE; /* Derived from Primary */
+  --ifm-color-primary-light: #C2D5F7; /* Derived from Primary */
+  --ifm-color-primary-lighter: #D6E3F9; /* Derived from Primary */
+  --ifm-color-primary-lightest: #EBF2FB; /* Derived from Primary */
+
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+
+  /* Custom palette variables */
+  --custom-color-background: #FFF2C6;
+  --custom-color-primary: #AAC4F5;
+  --custom-color-secondary: #8CA9FF;
+  --custom-color-dark: #43334C;
+  --custom-color-text: #222222;
+}
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme='dark'] {
+  --ifm-color-primary: #8CA9FF; /* Secondary for dark mode primary or a distinct dark primary */
+  --ifm-color-primary-dark: #7792E4;
+  --ifm-color-primary-darker: #627BD3;
+  --ifm-color-primary-darkest: #4D64CE;
+  --ifm-color-primary-light: #A1BFFB;
+  --ifm-color-primary-lighter: #B6CEFC;
+  --ifm-color-primary-lightest: #CBDFFD;
+
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+
+  /* Custom palette variables for dark mode */
+  --custom-color-background: #43334C; /* User's Dark for dark mode background */
+  --custom-color-primary: #8CA9FF; /* Using secondary as primary for dark mode */
+  --custom-color-secondary: #AAC4F5; /* Using primary as secondary for dark mode */
+  --custom-color-dark: #FFF2C6; /* User's Background for dark mode 'dark' */
+  --custom-color-text: #EBF2FB; /* Lighter text for dark mode */
+}
+
+/* Applying custom background and text colors globally */
+body {
+  background-color: var(--custom-color-background);
+  color: var(--custom-color-text);
+}
+
+/* Ensure headings also use the custom text color or a derived one */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--custom-color-text);
+}
+
+/* Adjusting some common Docusaurus elements to use custom colors */
+a {
+  color: var(--ifm-color-primary); /* Links use primary color */
+}
+
+a:hover {
+  color: var(--ifm-color-primary-dark);
+}
+
+.navbar__brand {
+  color: var(--custom-color-text);
+}
+
+.footer {
+  background-color: var(--custom-color-dark); /* Footer uses Dark color */
+  color: var(--custom-color-text);
+}

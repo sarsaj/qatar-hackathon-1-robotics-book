@@ -1,0 +1,64 @@
+---
+id: python-agents-ros2
+title: Python Agents to ROS 2 Integration
+sidebar_label: Python Agents → ROS 2
+---
+
+# Python Agents to ROS 2 Integration
+
+This chapter focuses on integrating Python-based AI agents with ROS 2 systems.
+
+## Content Placeholder
+
+[Provide detailed content about integrating Python agents with ROS 2 here.]
+
+## Code Examples
+
+```python
+# Example Python ROS 2 node for an agent
+import rclpy
+from rclpy.node import Node
+from std_msgs.msg import String
+
+class MinimalPublisher(Node):
+    def __init__(self):
+        super().__init__('minimal_publisher')
+        self.publisher_ = self.create_publisher(String, 'topic', 10)
+        timer_period = 0.5  # seconds
+        self.timer = self.create_timer(timer_period, self.timer_callback)
+        self.i = 0
+
+    def timer_callback(self):
+        msg = String()
+        msg.data = f'Hello from Python Agent: {self.i}'
+        self.publisher_.publish(msg)
+        self.get_logger().info(f'Publishing: "{msg.data}"')
+        self.i += 1
+
+def main(args=None):
+    rclpy.init(args=args)
+    minimal_publisher = MinimalPublisher()
+    rclpy.spin(minimal_publisher)
+    minimal_publisher.destroy_node()
+    rclpy.shutdown()
+
+if __name__ == '__main__':
+    main()
+```
+
+## Architecture Diagrams
+
+[Insert architecture diagrams related to Python agents and ROS 2 integration here.]
+
+## Launch Files
+
+```xml
+<!-- Example ROS 2 launch file for Python agent -->
+<launch>
+  <node pkg="my_python_agent_pkg" exec="my_agent_node" name="python_agent"/>
+</launch>
+```
+
+## Simulation Configurations
+
+[Insert simulation configuration details if applicable for Python agents in ROS 2 here.]

@@ -1,0 +1,117 @@
+--- 
+id: motion-planning-control
+title: Motion Planning & Control
+sidebar_label: Motion Planning & Control
+---
+
+# Motion Planning & Control
+
+This chapter covers the principles of robot motion planning and control systems.
+
+## Content Placeholder
+
+[Provide detailed content about path planning algorithms (e.g., A*, RRT, PRM), trajectory generation, and control strategies (e.g., PID, Model Predictive Control) for robotic systems.]
+
+## Code Examples
+
+```python
+# Conceptual Python code for a simple A* pathfinding algorithm
+# (Highly simplified for illustration)
+class Node:
+    def __init__(self, position, parent=None):
+        self.position = position
+        self.parent = parent
+        self.g = 0 # Cost from start node to current node
+        self.h = 0 # Heuristic (estimated cost from current node to end node)
+        self.f = 0 # Total cost (g + h)
+
+def a_star(maze, start, end):
+    open_list = []
+    closed_list = []
+
+    start_node = Node(start)
+    end_node = Node(end)
+
+    open_list.append(start_node)
+
+    while len(open_list) > 0:
+        current_node = open_list[0]
+        current_index = 0
+        for index, item in enumerate(open_list):
+            if item.f < current_node.f:
+                current_node = item
+                current_index = index
+
+        open_list.pop(current_index)
+        closed_list.append(current_node)
+
+        if current_node.position == end_node.position:
+            path = []
+            current = current_node
+            while current is not None:
+                path.append(current.position)
+                current = current.parent
+            return path[::-1] # Return reversed path
+
+        children = []
+        for new_position in [(0, -1), (0, 1), (-1, 0), (1, 0)]: # Adjacent squares
+            node_position = (current_node.position[0] + new_position[0], current_node.position[1] + new_position[1])
+
+            if node_position[0] > (len(maze) - 1) or node_position[0] < 0 or \
+               node_position[1] > (len(maze[len(maze)-1]) - 1) or node_position[1] < 0:
+                continue
+
+            if maze[node_position[0]][node_position[1]] != 0: # Check for walkable terrain
+                continue
+
+            new_node = Node(node_position, current_node)
+            children.append(new_node)
+
+        for child in children:
+            for closed_child in closed_list:
+                if child.position == closed_child.position:
+                    continue
+
+            child.g = current_node.g + 1
+            child.h = ((child.position[0] - end_node.position[0]) ** 2) + \
+                      ((child.position[1] - end_node.position[1]) ** 2)
+            child.f = child.g + child.h
+
+            for open_node in open_list:
+                if child.position == open_node.position and child.g > open_node.g:
+                    continue
+
+            open_list.append(child)
+    return None
+
+# Usage (conceptual)
+# maze = [[0,0,0,0,1,0,0,0,0,0],
+#         [0,0,0,0,1,0,0,0,0,0],
+#         [0,0,0,0,1,0,0,0,0,0],
+#         [0,0,0,0,1,0,0,0,0,0],
+#         [0,0,0,0,1,0,0,0,0,0],
+#         [0,0,0,0,0,0,0,0,0,0],
+#         [0,0,0,0,1,0,0,0,0,0],
+#         [0,0,0,0,1,0,0,0,0,0],
+#         [0,0,0,0,1,0,0,0,0,0],
+#         [0,0,0,0,0,0,0,0,0,0]]
+# 
+# start = (0,0)
+# end = (7,6)
+# 
+# path = a_star(maze, start, end)
+# if path:
+#     print(path)
+```
+
+## Architecture Diagrams
+
+[Insert architecture diagrams illustrating motion planning pipelines (e.g., global planner, local planner, controller) and their interactions with sensors and actuators.]
+
+## Launch Files
+
+[Insert launch file examples for starting ROS 2 navigation stack components (e.g., Nav2 planners, controllers, costmaps) or MoveIt 2 setup for manipulation.]
+
+## Simulation Configurations
+
+[Insert simulation configuration details for defining environments with obstacles, robot models, and physics properties for motion planning and control testing.]
